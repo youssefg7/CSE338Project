@@ -42,9 +42,9 @@ public class ScrappingTest {
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
-        List<Item> items = objectMapper.readValue(json.get("rankings").toString(), new TypeReference<List<Item>>(){});
+        List<NatTeam> natTeams = objectMapper.readValue(json.get("rankings").toString(), new TypeReference<List<NatTeam>>(){});
 
-        System.out.println(items.get(1).rankingItem.name);
+        System.out.println(natTeams.get(1).rankingItem);
     }
 }
 
