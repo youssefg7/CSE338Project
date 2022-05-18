@@ -1,6 +1,6 @@
 package Scrapping;
 
-public class NatTeam {
+public class NatTeamJSON {
 
     public rankingItem rankingItem;
     public float previousPoints;
@@ -37,6 +37,11 @@ public class NatTeam {
     public float getPrevPoints(){
         return this.previousPoints;
     }
+
+    public int getRank(){
+        return this.rankingItem.rank;
+    }
+
 
 }
 class tag{

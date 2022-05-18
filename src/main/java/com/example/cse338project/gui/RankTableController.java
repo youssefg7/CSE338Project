@@ -1,7 +1,7 @@
 package com.example.cse338project.gui;
 
-import com.example.cse338project.classes.RankingItem;
-import javafx.collections.FXCollections;
+import Scrapping.Scrapping;
+import com.example.cse338project.classes.NatTeam;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,43 +9,56 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import org.json.JSONException;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class RankTableController implements Initializable {
 
     @FXML
-    private TableView<RankingItem> rankingTable;
+    private TableView<NatTeam> rankingTable;
 
     @FXML
-    private TableColumn<RankingItem,Integer> rankColumn;
+    private TableColumn<NatTeam,Integer> rankColumn;
     @FXML
-    private TableColumn<RankingItem, FlagView> flagColumn;
+    private TableColumn<NatTeam, ImageView> flagColumn;
     @FXML
-    private TableColumn<RankingItem, String> teamColumn;
+    private TableColumn<NatTeam, String> teamColumn;
     @FXML
-    private TableColumn<RankingItem, Float> pointsColumn;
+    private TableColumn<NatTeam, Float> pointsColumn;
     @FXML
-    private TableColumn<RankingItem, Float> previousColumn;
+    private TableColumn<NatTeam, Float> previousColumn;
     @FXML
-    private TableColumn<RankingItem, Float> diffColumn;
+    private TableColumn<NatTeam, Float> diffColumn;
 
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
-        ObservableList<RankingItem> imgList = FXCollections.observableArrayList();
-        FlagView flag1 = new FlagView("https://cloudinary.fifa.com/api/v1/picture/flags-sq-2/ENG?tx=c_fill,g_auto,q_auto,w_70");
-        FlagView flag2 = new FlagView("https://cloudinary.fifa.com/api/v1/picture/flags-sq-2/FRA?tx=c_fill,g_auto,q_auto,w_70");
-        imgList.addAll(flag1, flag2);
-        flagColumn = new TableColumn<RankingItem, FlagView>("Flag");
-        flagColumn.setCellValueFactory(new PropertyValueFactory<RankingItem, FlagView>("Flag"));
-        flagColumn.setPrefWidth(60);
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ObservableList<NatTeam> li;
+        rankingTable.getItems().clear();
+        rankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
+        flagColumn.setCellValueFactory(new PropertyValueFactory<>("flag"));
+        diffColumn.setCellValueFactory(new PropertyValueFactory<>("totalPoints"));
+        teamColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        pointsColumn.setCellValueFactory(new PropertyValueFactory<>("totalPoints"));
+        previousColumn.setCellValueFactory(new PropertyValueFactory<>("prevPoints"));
 
-        /* add column to the tableview and set its items */
-        rankingTable.getColumns().add(flagColumn);
-        rankingTable.setItems(imgList);
+
+        try {
+            li = Scrapping.getRanking(13603);
+            for(int i = 0;  i< li.size(); i++){
+                rankingTable.getItems().add(li.get(i));
+            }
+        } catch (Exception e) {
+            //e.printStackTrace();
+        }
     }
+
+
 
 
 }

@@ -1,9 +1,11 @@
 
 package Scrapping;
+import com.example.cse338project.classes.NatTeam;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import javafx.collections.ObservableList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,9 +13,12 @@ import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class ScrappingTest {
+import static javafx.collections.FXCollections.observableArrayList;
+
+public class Scrapping {
 
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
@@ -36,15 +41,26 @@ public class ScrappingTest {
         }
     }
 
-    public static void main(String[] args) throws IOException, JSONException, IllegalArgumentException {
-        JSONObject json = readJsonFromUrl("https://www.fifa.com/api/ranking-overview?locale=en&dateId=id13603");
+    public static ObservableList<NatTeam> getPure(List<NatTeamJSON> arr){
+        ObservableList<NatTeam> li = observableArrayList();
+        for(int i = 0; i< arr.size(); i++){
+            li.add(new NatTeam(arr.get(i)));
+        }
+        return li;
+
+    }
+
+    public static ObservableList<NatTeam> getRanking(int i) throws IOException, JSONException, IllegalArgumentException {
+
+        String url = "https://www.fifa.com/api/ranking-overview?locale=en&dateId=id" + String.valueOf(i);
+        JSONObject json = readJsonFromUrl(url);
 
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
-        List<NatTeam> natTeams = objectMapper.readValue(json.get("rankings").toString(), new TypeReference<List<NatTeam>>(){});
+        List<NatTeamJSON> natTeamJSONS = objectMapper.readValue(json.get("rankings").toString(), new TypeReference<List<NatTeamJSON>>(){});
 
-        System.out.println(natTeams.get(1).rankingItem);
+        return getPure(natTeamJSONS);
     }
 }
 
