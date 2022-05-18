@@ -80,12 +80,12 @@
                                  <children>
                                     <TableView fx:id="rankingTable" prefHeight="263.0" prefWidth="600.0">
                                       <columns>
-                                        <TableColumn prefWidth="75.0" text="Rank" />
-                                          <TableColumn prefWidth="86.0" text="Flag" />
-                                          <TableColumn prefWidth="129.0" text="Team" />
-                                          <TableColumn prefWidth="105.0" text="Points" />
-                                          <TableColumn minWidth="7.0" prefWidth="111.0" text="Previous" />
-                                          <TableColumn prefWidth="78.0" text="+/-" />
+                                        <TableColumn fx:id="rankColumn" prefWidth="75.0" text="Rank" />
+                                          <TableColumn fx:id="flagColumn" prefWidth="86.0" text="Flag" />
+                                          <TableColumn fx:id="teamColumn" prefWidth="129.0" text="Team" />
+                                          <TableColumn fx:id="pointsColumn" prefWidth="105.0" text="Points" />
+                                          <TableColumn fx:id="previousColumn" minWidth="7.0" prefWidth="111.0" text="Previous" />
+                                          <TableColumn fx:id="diffColumn" prefWidth="78.0" text="+/-" />
                                       </columns>
                                     </TableView>
                                  </children>
