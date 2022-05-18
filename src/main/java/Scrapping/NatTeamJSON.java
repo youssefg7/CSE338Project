@@ -18,10 +18,6 @@ public class NatTeamJSON {
         return this.rankingItem.flag.src;
     }
 
-    public int[] getFlagDim(){
-        return new int[]{this.rankingItem.flag.width, this.rankingItem.flag.height};
-    }
-
     public float getTotalPoints(){
         return this.rankingItem.totalPoints;
     }

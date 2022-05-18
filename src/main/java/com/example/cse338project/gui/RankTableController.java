@@ -33,7 +33,7 @@ public class RankTableController implements Initializable {
     @FXML
     private TableColumn<NatTeam, Float> previousColumn;
     @FXML
-    private TableColumn<NatTeam, Float> diffColumn;
+    private TableColumn<NatTeam, String> diffColumn;
 
 
     @Override
@@ -42,7 +42,7 @@ public class RankTableController implements Initializable {
         rankingTable.getItems().clear();
         rankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
         flagColumn.setCellValueFactory(new PropertyValueFactory<>("flag"));
-        diffColumn.setCellValueFactory(new PropertyValueFactory<>("totalPoints"));
+        diffColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
         teamColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         pointsColumn.setCellValueFactory(new PropertyValueFactory<>("totalPoints"));
         previousColumn.setCellValueFactory(new PropertyValueFactory<>("prevPoints"));
@@ -50,11 +50,10 @@ public class RankTableController implements Initializable {
 
         try {
             li = Scrapping.getRanking(13603);
-            for(int i = 0;  i< li.size(); i++){
-                rankingTable.getItems().add(li.get(i));
-            }
+            rankingTable.setItems(li);
+
         } catch (Exception e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
     }
 

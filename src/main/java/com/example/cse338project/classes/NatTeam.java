@@ -6,9 +6,9 @@ import javafx.scene.image.ImageView;
 
 public class NatTeam {
 
-    private String name, location, countryCode, flagSrc;
+    private String name, location, countryCode;
     private float totalPoints, prevPoints;
-    private int prevRank, rank, flagH, flagW;
+    private int prevRank, rank;
     private ImageView flag;
 
     public NatTeam(NatTeamJSON team) {
@@ -36,10 +36,6 @@ public class NatTeam {
         return countryCode;
     }
 
-    public String getFlagSrc() {
-        return flagSrc;
-    }
-
     public float getTotalPoints() {
         return totalPoints;
     }
@@ -56,13 +52,6 @@ public class NatTeam {
         return rank;
     }
 
-    public int getFlagH() {
-        return flagH;
-    }
-
-    public int getFlagW() {
-        return flagW;
-    }
 
     public ImageView getFlag() {
         return flag;
