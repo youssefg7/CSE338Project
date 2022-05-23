@@ -1,6 +1,5 @@
 package com.example.cse338project.classes;
 
-import Scrapping.NatTeamJSON;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -11,18 +10,6 @@ public class NatTeam {
     private int prevRank, rank;
     private ImageView flag;
 
-    public NatTeam(NatTeamJSON team) {
-
-        this.name = team.getName();
-        this.location = team.getLocation();
-        this.flag = new ImageView(new Image(team.getFlagSrc())) ;
-        this.countryCode = team.getCountryCode();
-        this.totalPoints = team.getTotalPoints();
-        this.prevPoints = team.getPrevPoints();
-        this.prevRank = team.getPrevRank();
-        this.rank = team.getRank();
-
-    }
     public NatTeam(String name, String location, String countryCode, double totalPoints, double prevPoints, int prevRank, int rank, String flag) {
         this.name = name;
         this.location = location;

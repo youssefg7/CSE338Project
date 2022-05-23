@@ -16,6 +16,7 @@ import javafx.scene.image.ImageView;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -50,7 +51,8 @@ public class RankTableController implements Initializable {
     private TableColumn<NatTeam, Float> previousColumn;
     @FXML
     private TableColumn<NatTeam, String> diffColumn;
-    private ObservableList<NatTeam> li;
+
+    private ArrayList<NatTeam> MainLi;
     private ObservableList<String> dates;
 
 
@@ -64,7 +66,7 @@ public class RankTableController implements Initializable {
         pointsColumn.setCellValueFactory(new PropertyValueFactory<>("totalPoints"));
         previousColumn.setCellValueFactory(new PropertyValueFactory<>("prevPoints"));
         ArrayList<String> continents = new ArrayList<>();
-        Collections.addAll(continents, "AFC", "UEFA", "CAF", "OFC", "CONCACAF", "CONMEBOL");
+        Collections.addAll(continents, "All","AFC", "UEFA", "CAF", "OFC", "CONCACAF", "CONMEBOL");
         continentFilter.getItems().addAll(continents);
 
         try {
@@ -85,7 +87,8 @@ public class RankTableController implements Initializable {
 
     public void populateTable(int i) throws JSONException, IOException {
         rankingTable.getItems().clear();
-        li = Scrapping.getRanking(i);
+        ObservableList<NatTeam> li = Scrapping.getRanking(i);
+        MainLi = new ArrayList<>(li);
         rankingTable.setItems(li);
         dates = Scrapping.getDates();
         datesFilter.getItems().addAll(dates);
@@ -94,17 +97,17 @@ public class RankTableController implements Initializable {
     public void filterContinent() {
         String filter = continentFilter.getValue();
         System.out.println(filter);
-        ObservableList<NatTeam> toBeFiltered = FXCollections.observableArrayList(li);
-        System.out.println("tobefiltered " + toBeFiltered);
-        System.out.println("tobefiltered.filtered" + toBeFiltered.filtered(t -> t.getLocation().equals(filter)));
-        FilteredList<NatTeam> filteredTeams = toBeFiltered.filtered(t -> t.getLocation().equals(filter));//li.stream().filter(t->t.getLocation().equals(filter)).collect(Collectors.toCollection(FXCollections::observableArrayList));
-        System.out.println("filteredTeams" + filteredTeams);
-        toBeFiltered.stream().close();
+        System.out.println(MainLi);
+        ArrayList<NatTeam> cli = new ArrayList<>(MainLi);
+        if(!filter.equals("All")){
+            cli.removeIf(t -> !t.getLocation().equals(filter));
+        }
+        System.out.println("filteredTeams" + cli);
         rankingTable.getItems().clear();
-        rankingTable.getItems().addAll((ObservableList) filteredTeams);
+        rankingTable.setItems(FXCollections.observableList(cli));
     }
 
-    public void filterDate() throws ParseException, JSONException, IOException {
+    public void filterDate() throws JSONException, IOException {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd MMM yyyy");
         LocalDate feb2007 = LocalDate.parse("14 Feb 2007", dtf);
         System.out.println("here");

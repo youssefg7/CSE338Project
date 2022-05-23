@@ -11,7 +11,6 @@ import org.json.JSONObject;
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.util.List;
 import java.util.Scanner;
 
 import static javafx.collections.FXCollections.observableArrayList;
@@ -37,15 +36,6 @@ public class Scrapping {
         } finally {
             is.close();
         }
-    }
-
-    public static ObservableList<NatTeam> getPure(List<NatTeamJSON> arr) {
-        ObservableList<NatTeam> li = observableArrayList();
-        for (int i = 0; i < arr.size(); i++) {
-            li.add(new NatTeam(arr.get(i)));
-        }
-        return li;
-
     }
 
     public static ObservableList<NatTeam> getRanking(int i) throws IOException, JSONException, IllegalArgumentException {
