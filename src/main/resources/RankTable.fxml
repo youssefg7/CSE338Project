@@ -21,7 +21,7 @@
                <children>
                   <HBox alignment="TOP_CENTER" maxHeight="70.0" maxWidth="1.7976931348623157E308">
                      <children>
-                        <TextArea maxWidth="200.0" text="Welcome to the FIFA CocaCola&#10;National Teams Ranking" />
+                        <TextArea editable="false" maxWidth="200.0" text="Welcome to the FIFA CocaCola&#10;National Teams Ranking" />
                         <VBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                            <children>
                               <Label text="Filter by Continent:">
@@ -37,7 +37,7 @@
                         </VBox>
                         <VBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="Filter by Date:">
+                              <Label text="Ranking On Date:">
                                  <font>
                                     <Font size="13.0" />
                                  </font>

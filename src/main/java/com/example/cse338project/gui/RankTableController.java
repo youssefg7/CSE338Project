@@ -2,18 +2,17 @@ package com.example.cse338project.gui;
 
 import Scrapping.Scrapping;
 import com.example.cse338project.classes.NatTeam;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
-import org.json.JSONException;
 
-import java.io.IOException;
+import javafx.scene.image.ImageView;
+
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -63,6 +62,7 @@ public class RankTableController implements Initializable {
         Collections.addAll(continents, "All","AFC", "UEFA", "CAF", "OFC", "CONCACAF", "CONMEBOL");
         continentFilter.getItems().addAll(continents);
 
+
         try {
             dates = Scrapping.getDates();
             datesFilter.setItems(dates);
@@ -73,20 +73,33 @@ public class RankTableController implements Initializable {
         try {
             populateTable(13603);
         } catch (Exception e) {
-            Alert a = new Alert(Alert.AlertType.ERROR, "Make sure you have a stable Internet Connection", ButtonType.OK);
-            a.setTitle("Error");
-            Stage stage = (Stage) a.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("error.png"));
-            a.showAndWait();
             e.printStackTrace();
         }
     }
 
-    public void populateTable(int i) throws JSONException, IOException {
-        rankingTable.getItems().clear();
-        ObservableList<NatTeam> li = Scrapping.getRanking(i);
-        MainLi = new ArrayList<>(li);
-        rankingTable.setItems(li);
+    public void populateTable(int i){
+        Task task = new Task() {
+            @Override
+            protected Object call() {
+                try{
+                    rankingTable.getItems().clear();
+                    System.out.println("bef");
+                    rankingTable.setPlaceholder(new Label("Loading..."));
+                    datesFilter.setDisable(true);
+                    continentFilter.setDisable(true);
+                    ObservableList<NatTeam> li = Scrapping.getRanking(i);
+                    datesFilter.setDisable(false);
+                    continentFilter.setDisable(false);
+                    System.out.println("aft");
+                    MainLi = new ArrayList<>(li);
+                    rankingTable.setItems(li);
+                }catch (Exception e){
+                    rankingTable.setPlaceholder(new Label("Make sure you have a stable internet connection."));
+                }
+                return null;
+            }
+        };
+        new Thread(task).start();
     }
 
     public void filterContinent() {
@@ -102,7 +115,7 @@ public class RankTableController implements Initializable {
         rankingTable.setItems(FXCollections.observableList(cli));
     }
 
-    public void filterDate() throws JSONException, IOException {
+    public void filterDate() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd MMM yyyy");
         LocalDate dateChoice = LocalDate.parse(datesFilter.getValue(), dtf);
         LocalDate feb2007 = LocalDate.parse("14 Feb 2007", dtf);
@@ -112,14 +125,18 @@ public class RankTableController implements Initializable {
         int datediff1 = Math.toIntExact(ChronoUnit.DAYS.between(feb2007, dateChoice));
         int datediff2 = Math.toIntExact(ChronoUnit.DAYS.between(dec2002, dateChoice));
         System.out.println("here");
-        if(datediff1 >= 0){
-            populateTable(datediff1+8079);
-        }else if(datediff2 > 0){
-            System.out.println(arr.size() - index + 1);
-            populateTable(arr.size() - index + 1);
-        }else{
-            System.out.println(arr.size() - index);
-            populateTable(arr.size() - index);
+        try {
+            if (datediff1 >= 0) {
+                populateTable(datediff1 + 8079);
+            } else if (datediff2 > 0) {
+                System.out.println(arr.size() - index + 1);
+                populateTable(arr.size() - index + 1);
+            } else {
+                System.out.println(arr.size() - index);
+                populateTable(arr.size() - index);
+            }
+        }catch (Exception e){
+
         }
 
     }
