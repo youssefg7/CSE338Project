@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b384b80c-bf6c-4c46-a0a7-0e9c5cb2e708" name="Changes" comment="Initial UI design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cse338project/gui/RankTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cse338project/gui/RankTableController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/RankTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/RankTable.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,6 +121,7 @@
       <workItem from="1653319914376" duration="5378000" />
       <workItem from="1653329052422" duration="795000" />
       <workItem from="1653329886538" duration="193000" />
+      <workItem from="1653330198833" duration="2456000" />
     </task>
     <task id="LOCAL-00001" summary="Maven dependencies updated">
       <created>1652899612596</created>

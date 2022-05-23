@@ -4,30 +4,24 @@ import Scrapping.Scrapping;
 import com.example.cse338project.classes.NatTeam;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import org.json.JSONException;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
+
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 public class RankTableController implements Initializable {
 
@@ -71,17 +65,20 @@ public class RankTableController implements Initializable {
 
         try {
             dates = Scrapping.getDates();
-            datesFilter.getItems().addAll(dates);
+            datesFilter.setItems(dates);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         try {
             populateTable(13603);
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "Make sure you have a stable Internet Connection", ButtonType.OK);
+            a.setTitle("Error");
+            Stage stage = (Stage) a.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image("error.png"));
+            a.showAndWait();
+            e.printStackTrace();
         }
     }
 
@@ -90,8 +87,6 @@ public class RankTableController implements Initializable {
         ObservableList<NatTeam> li = Scrapping.getRanking(i);
         MainLi = new ArrayList<>(li);
         rankingTable.setItems(li);
-        dates = Scrapping.getDates();
-        datesFilter.getItems().addAll(dates);
     }
 
     public void filterContinent() {
@@ -109,10 +104,24 @@ public class RankTableController implements Initializable {
 
     public void filterDate() throws JSONException, IOException {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd MMM yyyy");
-        LocalDate feb2007 = LocalDate.parse("14 Feb 2007", dtf);
-        System.out.println("here");
         LocalDate dateChoice = LocalDate.parse(datesFilter.getValue(), dtf);
-        populateTable(Math.toIntExact(ChronoUnit.DAYS.between(feb2007, dateChoice))+8079);
+        LocalDate feb2007 = LocalDate.parse("14 Feb 2007", dtf);
+        LocalDate dec2002 = LocalDate.parse("18 Dec 2002", dtf);
+        ArrayList<String> arr = new ArrayList<>(dates);
+        int index = arr.indexOf(datesFilter.getValue());
+        int datediff1 = Math.toIntExact(ChronoUnit.DAYS.between(feb2007, dateChoice));
+        int datediff2 = Math.toIntExact(ChronoUnit.DAYS.between(dec2002, dateChoice));
+        System.out.println("here");
+        if(datediff1 >= 0){
+            populateTable(datediff1+8079);
+        }else if(datediff2 > 0){
+            System.out.println(arr.size() - index + 1);
+            populateTable(arr.size() - index + 1);
+        }else{
+            System.out.println(arr.size() - index);
+            populateTable(arr.size() - index);
+        }
+
     }
 
 }

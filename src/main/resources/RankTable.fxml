@@ -57,7 +57,7 @@
                         <TableColumn fx:id="teamColumn" editable="false" maxWidth="1.7976931348623157E308" prefWidth="129.0" text="Team" />
                         <TableColumn fx:id="pointsColumn" editable="false" maxWidth="1.7976931348623157E308" prefWidth="105.0" text="Points" />
                         <TableColumn fx:id="previousColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="7.0" prefWidth="111.0" text="Previous" />
-                        <TableColumn fx:id="diffColumn" editable="false" maxWidth="1.7976931348623157E308" prefWidth="78.0" text="+/-" />
+                        <TableColumn fx:id="diffColumn" editable="false" maxWidth="1.7976931348623157E308" prefWidth="78.0" text="Continent" />
                     </columns>
                      <VBox.margin>
                         <Insets top="10.0" />
