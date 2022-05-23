@@ -4,10 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b384b80c-bf6c-4c46-a0a7-0e9c5cb2e708" name="Changes" comment="Table View Partially Done">
+    <list default="true" id="b384b80c-bf6c-4c46-a0a7-0e9c5cb2e708" name="Changes" comment="Initial UI design">
+      <change afterPath="$PROJECT_DIR$/hs_err_pid12751.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid21123.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid22294.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid24347.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid28555.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid32344.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid4506.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid6026.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid60787.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid61030.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid6138.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid65274.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid66248.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid68101.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid6953.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid80466.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid8806.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid90815.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid92306.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid92535.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid93110.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid93642.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid93677.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dates.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scrapping/Scrapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scrapping/Scrapping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cse338project/classes/NatTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cse338project/classes/NatTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cse338project/gui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cse338project/gui/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cse338project/gui/RankTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cse338project/gui/RankTableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/RankTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/RankTable.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,24 +58,27 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="28wbAUeUBr1M58SZDoiPbaPc6o8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/java/Scrapping" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="Testing" />
@@ -107,7 +138,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.ScrappingTest" />
         <item itemvalue="Application.com.example.cse338project.HelloApplication" />
       </list>
     </recent_temporary>
@@ -124,6 +154,10 @@
       <workItem from="1652130455789" duration="4549000" />
       <workItem from="1652899266427" duration="3524000" />
       <workItem from="1652904492473" duration="4499000" />
+      <workItem from="1653180202469" duration="3000" />
+      <workItem from="1653205584861" duration="64000" />
+      <workItem from="1653208924607" duration="3414000" />
+      <workItem from="1653306259338" duration="8909000" />
     </task>
     <task id="LOCAL-00001" summary="Maven dependencies updated">
       <created>1652899612596</created>
@@ -164,6 +198,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Maven dependencies updated" />
     <MESSAGE value="getters for easier use" />
     <MESSAGE value="Table View Partially Done" />

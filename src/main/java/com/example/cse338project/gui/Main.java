@@ -15,7 +15,7 @@ public class Main extends Application {
     }
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("hello-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("RankTable.fxml")));
         Image logo = new Image("FIFA.png");
         primaryStage.getIcons().add(logo);
         Scene scene = new Scene(root);

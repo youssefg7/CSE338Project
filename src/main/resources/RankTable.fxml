@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
@@ -42,11 +42,11 @@
                                           <Font size="21.0" />
                                        </font>
                                     </Label>
-                                    <ChoiceBox fx:id="continentFilter" prefHeight="26.0" prefWidth="214.0">
+                                    <ComboBox fx:id="continentFilter" onAction="#filterContinent" prefHeight="26.0" prefWidth="216.0">
                                        <VBox.margin>
                                           <Insets top="15.0" />
                                        </VBox.margin>
-                                    </ChoiceBox>
+                                    </ComboBox>
                                  </children>
                               </VBox>
                               <VBox prefHeight="100.0" prefWidth="192.0">
@@ -62,11 +62,11 @@
                                           <Font size="21.0" />
                                        </font>
                                     </Label>
-                                    <ChoiceBox fx:id="dateFilter" prefHeight="26.0" prefWidth="201.0">
+                                    <ComboBox fx:id="datesFilter" onAction="#filterDate" prefHeight="26.0" prefWidth="202.0">
                                        <VBox.margin>
                                           <Insets top="15.0" />
                                        </VBox.margin>
-                                    </ChoiceBox>
+                                    </ComboBox>
                                  </children>
                               </VBox>
                            </children>
