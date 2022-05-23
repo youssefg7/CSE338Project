@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -14,94 +13,64 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse338project.gui.RankTableController">
-   <children>
-      <TabPane prefHeight="424.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Home">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="230.0" prefWidth="307.0">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cse338project.gui.RankTableController">
+  <tabs>
+    <Tab text="World Ranking">
+         <content>
+            <VBox>
+               <children>
+                  <HBox alignment="TOP_CENTER" maxHeight="70.0" maxWidth="1.7976931348623157E308">
                      <children>
-                        <HBox prefHeight="131.0" prefWidth="600.0">
+                        <TextArea maxWidth="200.0" text="Welcome to the FIFA CocaCola&#10;National Teams Ranking" />
+                        <VBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                            <children>
-                              <VBox prefHeight="100.0" prefWidth="195.0">
-                                 <children>
-                                    <TextArea prefHeight="46.0" prefWidth="190.0" text="Welcome to the FIFA CocaCola&#10;National Teams Ranking" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="100.0" prefWidth="214.0">
-                                 <children>
-                                    <Label prefHeight="17.0" prefWidth="215.0" text="Filter by Continent:">
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
-                                       <padding>
-                                          <Insets left="5.0" />
-                                       </padding>
-                                       <font>
-                                          <Font size="21.0" />
-                                       </font>
-                                    </Label>
-                                    <ComboBox fx:id="continentFilter" onAction="#filterContinent" prefHeight="26.0" prefWidth="216.0">
-                                       <VBox.margin>
-                                          <Insets top="15.0" />
-                                       </VBox.margin>
-                                    </ComboBox>
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="100.0" prefWidth="192.0">
-                                 <children>
-                                    <Label prefHeight="17.0" prefWidth="204.0" text="Filter by Date:">
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
-                                       <padding>
-                                          <Insets left="5.0" />
-                                       </padding>
-                                       <font>
-                                          <Font size="21.0" />
-                                       </font>
-                                    </Label>
-                                    <ComboBox fx:id="datesFilter" onAction="#filterDate" prefHeight="26.0" prefWidth="202.0">
-                                       <VBox.margin>
-                                          <Insets top="15.0" />
-                                       </VBox.margin>
-                                    </ComboBox>
-                                 </children>
-                              </VBox>
+                              <Label text="Filter by Continent:">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="continentFilter" maxWidth="1.7976931348623157E308" onAction="#filterContinent" />
                            </children>
-                        </HBox>
-                        <ScrollPane hmin="-1.0" layoutY="130.0" pannable="true" prefHeight="263.0" prefWidth="600.0" vmin="-1.0">
-                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="265.0" prefWidth="600.0">
-                                 <opaqueInsets>
-                                    <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
-                                 </opaqueInsets>
-                                 <children>
-                                    <TableView fx:id="rankingTable" prefHeight="263.0" prefWidth="600.0">
-                                      <columns>
-                                        <TableColumn fx:id="rankColumn" prefWidth="75.0" text="Rank" />
-                                          <TableColumn fx:id="flagColumn" prefWidth="86.0" text="Flag" />
-                                          <TableColumn fx:id="teamColumn" prefWidth="129.0" text="Team" />
-                                          <TableColumn fx:id="pointsColumn" prefWidth="105.0" text="Points" />
-                                          <TableColumn fx:id="previousColumn" minWidth="7.0" prefWidth="111.0" text="Previous" />
-                                          <TableColumn fx:id="diffColumn" prefWidth="78.0" text="+/-" />
-                                      </columns>
-                                    </TableView>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </ScrollPane>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Filter by Date:">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="datesFilter" maxWidth="1.7976931348623157E308" onAction="#filterDate">
+                                 <VBox.margin>
+                                    <Insets right="5.0" />
+                                 </VBox.margin></ComboBox>
+                           </children>
+                        </VBox>
                      </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Add Score">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
-   </children>
-</AnchorPane>
+                  </HBox>
+                  <TableView fx:id="rankingTable" maxHeight="1.7976931348623157E308" prefHeight="9.99999999E8">
+                    <columns>
+                        <TableColumn fx:id="rankColumn" editable="false" maxWidth="1.7976931348623157E308" prefWidth="75.0" text="Rank" />
+                        <TableColumn fx:id="flagColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="86.0" prefWidth="86.0" text="Flag" />
+                        <TableColumn fx:id="teamColumn" editable="false" maxWidth="1.7976931348623157E308" prefWidth="129.0" text="Team" />
+                        <TableColumn fx:id="pointsColumn" editable="false" maxWidth="1.7976931348623157E308" prefWidth="105.0" text="Points" />
+                        <TableColumn fx:id="previousColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="7.0" prefWidth="111.0" text="Previous" />
+                        <TableColumn fx:id="diffColumn" editable="false" maxWidth="1.7976931348623157E308" prefWidth="78.0" text="+/-" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+         </content>
+    </Tab>
+    <Tab text="Untitled Tab 2">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
