@@ -12,4 +12,5 @@ module com.example.cse338project {
     exports com.example.cse338project.gui;
     opens com.example.cse338project.gui to javafx.fxml;
     opens com.example.cse338project.classes to javafx.base;
+
 }

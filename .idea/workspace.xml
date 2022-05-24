@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b384b80c-bf6c-4c46-a0a7-0e9c5cb2e708" name="Changes" comment="Initial UI design">
+      <change afterPath="$PROJECT_DIR$/src/main/Test/RankTableGuiTesting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cse338project/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cse338project/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cse338project/gui/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cse338project/gui/RankTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cse338project/gui/RankTableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/RankTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/RankTable.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dates.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dates.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +43,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.47356322" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -65,7 +66,7 @@
       <recent name="Testing" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.RankTableGuiTesting">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.cse338project.gui.Main" />
       <module name="CSE338Project" />
@@ -105,8 +106,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RankTableGuiTesting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSE338Project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RankTableGuiTesting" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.com.example.cse338project.HelloApplication" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Scrapping" />
+      <item itemvalue="JUnit.RankTableGuiTesting" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RankTableGuiTesting" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.com.example.cse338project.HelloApplication" />
       </list>
@@ -133,6 +152,8 @@
       <workItem from="1653329886538" duration="193000" />
       <workItem from="1653330198833" duration="2456000" />
       <workItem from="1653338895745" duration="4795000" />
+      <workItem from="1653387761618" duration="248000" />
+      <workItem from="1653388027355" duration="1332000" />
     </task>
     <task id="LOCAL-00001" summary="Maven dependencies updated">
       <created>1652899612596</created>
