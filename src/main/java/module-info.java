@@ -4,9 +4,8 @@ module com.example.cse338project {
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.core;
     requires json;
+    requires org.jsoup;
 
-
-    opens com.example.cse338project to javafx.fxml;
     opens Scrapping to com.fasterxml.jackson.databind;
     exports com.example.cse338project;
     exports com.example.cse338project.gui;

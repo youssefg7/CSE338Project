@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 import static javafx.collections.FXCollections.observableArrayList;
 
-public class Scrapping {
+public class NatScrapping {
 
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();

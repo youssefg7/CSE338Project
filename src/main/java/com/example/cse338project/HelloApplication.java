@@ -1,23 +1,24 @@
 package com.example.cse338project;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+
+import com.example.cse338project.classes.UefTeam;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Attributes;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 
-public class HelloApplication extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("RankTable.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
-    }
+public class HelloApplication {
 
-    public static void main(String[] args) {
-        launch();
+    public static void main(String[] args) throws IOException {
+        Document doc = Jsoup.connect("https://www.uefa.com/nationalassociations/uefarankings/club/libraries//years/2022/").get();
+        System.out.println(doc.getElementsByAttributeValue("class","standings-lastupdate").text());
+
+
     }
 }

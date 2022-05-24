@@ -1,18 +1,14 @@
 import com.example.cse338project.classes.NatTeam;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.Pane;
 import org.awaitility.Awaitility;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
-import org.testfx.assertions.api.AbstractNodeAssert;
-import org.testfx.assertions.api.Assertions;
+
 import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
 
