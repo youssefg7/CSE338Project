@@ -2,10 +2,10 @@ package com.example.cse338project.gui;
 
 import Scrapping.Scrapping;
 import com.example.cse338project.classes.NatTeam;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -47,6 +47,7 @@ public class RankTableController implements Initializable {
 
     private ArrayList<NatTeam> MainLi;
     private ObservableList<String> dates;
+
 
 
     @Override
@@ -99,7 +100,9 @@ public class RankTableController implements Initializable {
                 return null;
             }
         };
+
         new Thread(task).start();
+
     }
 
     public void filterContinent() {
@@ -125,19 +128,17 @@ public class RankTableController implements Initializable {
         int datediff1 = Math.toIntExact(ChronoUnit.DAYS.between(feb2007, dateChoice));
         int datediff2 = Math.toIntExact(ChronoUnit.DAYS.between(dec2002, dateChoice));
         System.out.println("here");
-        try {
-            if (datediff1 >= 0) {
-                populateTable(datediff1 + 8079);
-            } else if (datediff2 > 0) {
-                System.out.println(arr.size() - index + 1);
-                populateTable(arr.size() - index + 1);
-            } else {
-                System.out.println(arr.size() - index);
-                populateTable(arr.size() - index);
-            }
-        }catch (Exception e){
-
+        if (datediff1 >= 0) {
+            populateTable(datediff1 + 8079);
+        } else if (datediff2 > 0) {
+            System.out.println(arr.size() - index + 1);
+            populateTable(arr.size() - index + 1);
+        } else {
+            System.out.println(arr.size() - index);
+            populateTable(arr.size() - index);
         }
+
+
 
     }
 
