@@ -1,20 +1,28 @@
 package Scrapping;
 
 import com.example.cse338project.classes.NatTeam;
+
 import javafx.collections.ObservableList;
+
+import javafx.stage.Stage;
 import org.json.JSONException;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.testfx.framework.junit5.ApplicationExtension;
+import org.testfx.framework.junit5.Start;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class NatScrappingTest {
 
-
     @Nested
     class GetDatesTests {
+
         static ObservableList<String> datesObservableList;
 
         @BeforeAll
@@ -47,18 +55,21 @@ class NatScrappingTest {
     }
 
     @Nested
+    @ExtendWith(ApplicationExtension.class)
     class GetRankingTests {
+
         static ObservableList<NatTeam> teamsObservableList;
 
-        @BeforeAll
-        public static void beforeAll() throws JSONException, IOException, RuntimeException {
+        @Start
+        public void start(Stage stage) throws Exception {
             teamsObservableList = NatScrapping.getRanking(13603);
         }
 
         @Test
-        public void firstTeamTest() {
+        public void firstTeamTest() throws JSONException, IOException {
             assertEquals("Brazil", teamsObservableList.get(0).getName());
         }
+
     }
 
 }
