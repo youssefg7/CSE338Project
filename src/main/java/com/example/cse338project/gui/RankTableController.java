@@ -95,6 +95,7 @@ public class RankTableController implements Initializable {
         teamColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         pointsColumn.setCellValueFactory(new PropertyValueFactory<>("totalPoints"));
         previousColumn.setCellValueFactory(new PropertyValueFactory<>("prevPoints"));
+
         UefarankingTable.getItems().clear();
         UrankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
         UflagColumn.setCellValueFactory(new PropertyValueFactory<>("flag"));
@@ -119,7 +120,7 @@ public class RankTableController implements Initializable {
         try {
             dates = NatScrapping.getDates();
             datesFilter.setItems(dates);
-            countries = UefScrapping.getYears();
+            countries = UefScrapping.getCountries();
             countryFilter.setItems(countries);
         } catch (Exception e) {
             e.printStackTrace();

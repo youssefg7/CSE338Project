@@ -50,17 +50,16 @@ public class UefScrapping {
         return doc.getElementsByAttributeValue("class","standings-lastupdate").text();
     }
 
-    public static ObservableList<String> getYears() throws FileNotFoundException {
+    public static ObservableList<String> getCountries() throws FileNotFoundException {
         String workingDirectory = System.getProperty("user.dir");
         String s = File.separator;
         String path = workingDirectory + s + "src" + s + "main" + s + "resources" + s + "countries.txt";
-        System.out.println(path);
         File file = new File(path);
         Scanner sc = new Scanner(file);
-        ObservableList<String> dates = observableArrayList();
+        ObservableList<String> countries = observableArrayList();
         while (sc.hasNextLine())
-            dates.add(sc.nextLine());
-        return dates;
+            countries.add(sc.nextLine());
+        return countries;
     }
 
 }

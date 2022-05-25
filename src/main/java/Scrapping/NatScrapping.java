@@ -55,7 +55,6 @@ public class NatScrapping {
         String workingDirectory = System.getProperty("user.dir");
         String s = File.separator;
         String path = workingDirectory + s + "src" + s + "main" + s + "resources" + s + "dates.txt";
-        System.out.println(path);
         File file = new File(path);
         Scanner sc = new Scanner(file);
         ObservableList<String> dates = observableArrayList();
