@@ -1,29 +1,28 @@
-package Scrapping;
+package Unit;
 
+import Scrapping.UefScrapping;
 import com.example.cse338project.classes.UefTeam;
 import javafx.collections.ObservableList;
+import javafx.stage.Stage;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.testfx.framework.junit5.ApplicationExtension;
+import org.testfx.framework.junit5.Start;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UefScrappingTest {
+class UefScrappingUnitTest {
 
     @Nested
     class GetUpTests {
 
-        @DisplayName("Testing latest year 2022")
-        @Test
-        public void getUpTestLatest() throws IOException {
-            assertEquals("Last updated: 24/05/2022 10:17", UefScrapping.getUp(2022));
-        }
-
         @DisplayName("Testing 2021")
         @Test
         public void getUpTest() throws IOException {
-            assertEquals("Last updated: 20/10/2021 09:14", UefScrapping.getUp(2021));
+            Assertions.assertEquals("Last updated: 20/10/2021 09:14", UefScrapping.getUp(2021));
         }
 
         @DisplayName("Testing 2007")
@@ -31,14 +30,21 @@ class UefScrappingTest {
         public void getUpTest2() throws IOException {
             assertEquals("Last updated: 19/06/2018 09:33", UefScrapping.getUp(2007));
         }
+
+        @DisplayName("Testing 2010")
+        @Test
+        public void getUpTest3() throws IOException {
+            assertEquals("Last updated: 19/06/2018 09:32", UefScrapping.getUp(2010));
+        }
     }
 
     @Nested
+    @ExtendWith(ApplicationExtension.class)
     class GetCountriesTests{
         static ObservableList<String> countriesObservableList;
 
-        @BeforeAll
-        public static void beforeAll() throws FileNotFoundException {
+        @Start
+        public static void start(Stage stage) throws FileNotFoundException {
             countriesObservableList = UefScrapping.getCountries();
         }
 
@@ -67,19 +73,19 @@ class UefScrappingTest {
     }
 
     @Nested
+    @ExtendWith(ApplicationExtension.class)
     class GetUefRankTests{
         static ObservableList<UefTeam> teamsObservableList;
 
-        @BeforeAll
-        public static void beforeAll() throws IOException {
-            System.out.println("BeforeAll");
+        @Start
+        public static void start(Stage stage) throws IOException {
             teamsObservableList = UefScrapping.getUefRank(2007);
-            System.out.println(teamsObservableList);
+
         }
 
         @Test
-        public void test(){
-            System.out.println("test");
+        public void TeamTest(){
+            assertEquals("AC Milan", teamsObservableList.get(0).getName());
         }
     }
 }

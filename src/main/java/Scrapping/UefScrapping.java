@@ -62,4 +62,14 @@ public class UefScrapping {
         return countries;
     }
 
+    public static ObservableList<UefTeam> getUefRank_(int year) throws IOException {
+        ObservableList<UefTeam> li = FXCollections.observableArrayList();
+        li.add(new UefTeam(year));
+        return li;
+    }
+
+    public static String getUp_(int year) throws IOException {
+        return String.valueOf(year);
+    }
+
 }

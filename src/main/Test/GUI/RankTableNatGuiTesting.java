@@ -1,3 +1,5 @@
+package GUI;
+
 import com.example.cse338project.classes.NatTeam;
 import javafx.fxml.FXMLLoader;
 
@@ -23,7 +25,7 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 @ExtendWith(ApplicationExtension.class)
-public class RankTableGuiTesting {
+public class RankTableNatGuiTesting {
 
 
     @Start
@@ -113,36 +115,4 @@ public class RankTableGuiTesting {
         }
     }
 
-
-    /**
-     * @param robot - Will be injected by the test runner.
-     */
-//    @Test
-//    void should_contain_button_with_text(FxRobot robot) {
-//        Assertions.assertThat(button).hasText("click me!");
-//        // or (lookup by css id):
-//        Assertions.assertThat(robot.lookup("#myButton").queryAs(Button.class)).hasText("click me!");
-//        // or (lookup by css class):
-//        Assertions.assertThat(robot.lookup(".button").queryAs(Button.class)).hasText("click me!");
-//        // or (query specific type):
-//        Assertions.assertThat(robot.lookup(".button").queryButton()).hasText("click me!");
-//    }
-
-    /**
-     * @param robot - Will be injected by the test runner.
-     */
-//    @Test
-//    void when_button_is_clicked_text_changes(FxRobot robot) {
-//        // when:
-//        robot.clickOn(".button");
-//
-//        // then:
-//        Assertions.assertThat(button).hasText("clicked!");
-//        // or (lookup by css id):
-//        Assertions.assertThat(robot.lookup("#myButton").queryAs(Button.class)).hasText("clicked!");
-//        // or (lookup by css class):
-//        Assertions.assertThat(robot.lookup(".button").queryAs(Button.class)).hasText("clicked!");
-//        // or (query specific type)
-//        Assertions.assertThat(robot.lookup(".button").queryButton()).hasText("clicked!");
-//    }
 }

@@ -10,6 +10,10 @@ public class NatTeam {
     private int prevRank, rank;
     private ImageView flag;
 
+    public NatTeam(int i){
+        this.name = String.valueOf(i);
+    }
+
     public NatTeam(String name, String location, String countryCode, double totalPoints, double prevPoints, int prevRank, int rank, String flag) {
         this.name = name;
         this.location = location;

@@ -51,6 +51,13 @@ public class NatScrapping {
         return ls;
     }
 
+    public static ObservableList<NatTeam> getRanking_(int i) throws IOException, JSONException, IllegalArgumentException {
+
+        ObservableList<NatTeam> ls = observableArrayList();
+        ls.add(new NatTeam(i));
+        return ls;
+    }
+
     public static ObservableList<String> getDates() throws FileNotFoundException {
         String workingDirectory = System.getProperty("user.dir");
         String s = File.separator;

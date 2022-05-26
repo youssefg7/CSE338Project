@@ -54,6 +54,10 @@ public class UefTeam {
         return rank;
     }
 
+    public UefTeam(int i){
+        this.name = String.valueOf(i);
+    }
+
     public UefTeam(String name, String country, String teamCode, String curPoints, String c1Points, String c2Points, String c3Points, String c4Points, String totalPoints, String flag, int rank) {
         this.name = name;
         this.country = country;

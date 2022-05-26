@@ -1,5 +1,6 @@
-package Scrapping;
+package Unit;
 
+import Scrapping.NatScrapping;
 import com.example.cse338project.classes.NatTeam;
 
 import javafx.collections.ObservableList;
@@ -18,7 +19,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-class NatScrappingTest {
+class NatScrappingUnitTest {
 
     @Nested
     class GetDatesTests {
@@ -66,7 +67,7 @@ class NatScrappingTest {
         }
 
         @Test
-        public void firstTeamTest() throws JSONException, IOException {
+        public void TeamTest() throws JSONException, IOException {
             assertEquals("Brazil", teamsObservableList.get(0).getName());
         }
 

@@ -27,63 +27,62 @@ import java.util.*;
 public class RankTableController implements Initializable {
 
     @FXML
-    private ComboBox<String> continentFilter;
+    public ComboBox<String> continentFilter;
     @FXML
-    private ComboBox<String> datesFilter;
+    public ComboBox<String> datesFilter;
     @FXML
-    private ComboBox<String> countryFilter;
+    public ComboBox<String> countryFilter;
     @FXML
-    private ComboBox<String> yearFilter;
+    public ComboBox<String> yearFilter;
 
     @FXML
-    private TableView<NatTeam> rankingTable;
+    public TableView<NatTeam> rankingTable;
     @FXML
-    private TableView<UefTeam> UefarankingTable;
+    public TableView<UefTeam> UefarankingTable;
 
     @FXML
-    private TableColumn<UefTeam, Integer> UrankColumn;
+    public TableColumn<UefTeam, Integer> UrankColumn;
     @FXML
-    private TableColumn<UefTeam, ImageView> UflagColumn;
+    public TableColumn<UefTeam, ImageView> UflagColumn;
     @FXML
-    private TableColumn<UefTeam, String> UteamColoumn;
+    public TableColumn<UefTeam, String> UteamColoumn;
     @FXML
-    private TableColumn<UefTeam, String> UteamCodeCol;
+    public TableColumn<UefTeam, String> UteamCodeCol;
     @FXML
-    private TableColumn<UefTeam, String> UcountryColoumn;
+    public TableColumn<UefTeam, String> UcountryColoumn;
     @FXML
-    private TableColumn<UefTeam, String> Utcp4;
+    public TableColumn<UefTeam, String> Utcp4;
     @FXML
-    private TableColumn<UefTeam, String> Utcp3;
+    public TableColumn<UefTeam, String> Utcp3;
     @FXML
-    private TableColumn<UefTeam, String> Utcp2;
+    public TableColumn<UefTeam, String> Utcp2;
     @FXML
-    private TableColumn<UefTeam, String> Utcp1;
+    public TableColumn<UefTeam, String> Utcp1;
     @FXML
-    private TableColumn<UefTeam, String> Utcp;
+    public TableColumn<UefTeam, String> Utcp;
     @FXML
-    private TableColumn<UefTeam,String> utotal;
+    public TableColumn<UefTeam,String> utotal;
 
     @FXML
-    private TableColumn<NatTeam, Integer> rankColumn;
+    public TableColumn<NatTeam, Integer> rankColumn;
     @FXML
-    private TableColumn<NatTeam, ImageView> flagColumn;
+    public TableColumn<NatTeam, ImageView> flagColumn;
     @FXML
-    private TableColumn<NatTeam, String> teamColumn;
+    public TableColumn<NatTeam, String> teamColumn;
     @FXML
-    private TableColumn<NatTeam, Float> pointsColumn;
+    public TableColumn<NatTeam, Float> pointsColumn;
     @FXML
-    private TableColumn<NatTeam, Float> previousColumn;
+    public TableColumn<NatTeam, Float> previousColumn;
     @FXML
-    private TableColumn<NatTeam, String> diffColumn;
+    public TableColumn<NatTeam, String> diffColumn;
 
     @FXML
-    private Label labelLastUp;
+    public Label labelLastUp;
 
-    private ArrayList<NatTeam> MainLi;
-    private ArrayList<UefTeam> MainUefLi;
-    private ObservableList<String> dates;
-    private ObservableList<String> countries;
-
+    public ArrayList<NatTeam> MainLi;
+    public ArrayList<UefTeam> MainUefLi;
+    public ObservableList<String> dates;
+    public ObservableList<String> countries;
 
 
     @Override
@@ -173,6 +172,7 @@ public class RankTableController implements Initializable {
         };
 
         new Thread(task).start();
+
     }
 
     public void populateTable(int i){
@@ -205,7 +205,7 @@ public class RankTableController implements Initializable {
 
     }
 
-    public void filterContinent() {
+    public ArrayList<NatTeam> filterContinent() {
         String filter = continentFilter.getValue();
         System.out.println(filter);
         System.out.println(MainLi);
@@ -216,9 +216,10 @@ public class RankTableController implements Initializable {
         System.out.println("filteredTeams" + cli);
         rankingTable.getItems().clear();
         rankingTable.setItems(FXCollections.observableList(cli));
+        return cli;
     }
 
-    public void filterCountry(){
+    public ArrayList<UefTeam>  filterCountry(){
         String filter = countryFilter.getValue();
         System.out.println(filter);
         System.out.println(MainUefLi);
@@ -229,14 +230,15 @@ public class RankTableController implements Initializable {
         System.out.println("filteredTeams" + cli);
         UefarankingTable.getItems().clear();
         UefarankingTable.setItems(FXCollections.observableList(cli));
+        return cli;
     }
 
-    public void filterYear(){
+    public void filterYear() throws Exception {
         int yr = Integer.parseInt(yearFilter.getValue());
         populateUefTable(yr);
     }
 
-    public void filterDate() {
+    public void filterDate() throws Exception {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd MMM yyyy");
         LocalDate dateChoice = LocalDate.parse(datesFilter.getValue(), dtf);
         LocalDate feb2007 = LocalDate.parse("14 Feb 2007", dtf);
@@ -249,13 +251,21 @@ public class RankTableController implements Initializable {
         if (datediff1 >= 0) {
             populateTable(datediff1 + 8079);
         } else if (datediff2 > 0) {
-            System.out.println(arr.size() - index + 1);
             populateTable(arr.size() - index + 1);
         } else {
-            System.out.println(arr.size() - index);
             populateTable(arr.size() - index);
         }
 
     }
+
+    public void populateTable_(int i) throws Exception {
+        throw new Exception(String.valueOf(i));
+    }
+
+    public void populateUefTable_(int i) throws Exception {
+        throw new Exception(String.valueOf(i));
+    }
+
+
 
 }
