@@ -36,6 +36,12 @@ class UefScrappingUnitTest {
         public void getUpTest3() throws IOException {
             assertEquals("Last updated: 19/06/2018 09:32", UefScrapping.getUp(2010));
         }
+        @DisplayName("Wrong Testing 2010")
+        @Test
+        public void getUpTest4() throws IOException {
+            assertNotEquals("Last updated: 19/06/2010 09:32", UefScrapping.getUp(2010));
+        }
+
     }
 
     @Nested
@@ -64,6 +70,12 @@ class UefScrappingUnitTest {
         @DisplayName("Last country in list")
         public void lastCountryTest() {
             assertEquals("WAL", countriesObservableList.get(55));
+        }
+
+        @Test
+        @DisplayName("Country not in list")
+        public void countryNotInListTest(){
+            assertFalse(countriesObservableList.contains("KKK"));
         }
 
         @AfterAll

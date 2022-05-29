@@ -17,13 +17,13 @@ import java.io.IOException;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 
 class NatScrappingUnitTest {
 
     @Nested
     class GetDatesTests {
-
         static ObservableList<String> datesObservableList;
 
         @BeforeAll
@@ -47,6 +47,12 @@ class NatScrappingUnitTest {
         @DisplayName("Last date in list")
         public void lastDateTest() {
             assertEquals("31 Dec 1992", datesObservableList.get(318));
+        }
+
+        @Test
+        @DisplayName("Date not in list")
+        public  void dateNotInList(){
+            assertFalse(datesObservableList.contains("01 01 2001"));
         }
 
         @AfterAll
