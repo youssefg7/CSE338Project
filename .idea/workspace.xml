@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b384b80c-bf6c-4c46-a0a7-0e9c5cb2e708" name="Changes" comment="Initial UI design">
-      <change afterPath="$PROJECT_DIR$/hs_err_pid2527.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid31398.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid31641.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid34755.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid34898.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid82200.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Test/Unit/NatScrappingUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test/Unit/NatScrappingUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Test/Integration/UefIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test/Integration/UefIntegrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Test/Performance/PerformanceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test/Performance/PerformanceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Test/Unit/UefScrappingUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test/Unit/UefScrappingUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scrapping/NatScrapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scrapping/NatScrapping.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +39,9 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Code Projects\Java\CSETestProj\CSE338Project\src\main\resources" />
@@ -74,13 +68,43 @@
       <recent name="GUI" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UefScrappingUnitTest$GetCountriesTests">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.cse338project.gui.Main" />
+      <module name="CSE338Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.cse338project.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NatIntegrationTests$BottomUp" type="JUnit" factoryName="JUnit">
       <module name="CSE338Project" />
       <option name="PACKAGE_NAME" value="Integration.NatIntegrationTests" />
       <option name="MAIN_CLASS_NAME" value="Integration.NatIntegrationTests$BottomUp" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NatIntegrationTests$BottomUp.TestingFilterDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSE338Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Integration.NatIntegrationTests" />
+      <option name="MAIN_CLASS_NAME" value="Integration.NatIntegrationTests$BottomUp" />
+      <option name="METHOD_NAME" value="TestingFilterDate" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,52 +150,6 @@
       <option name="METHOD_NAME" value="TestingWScrape" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NatScrappingUnitTest$GetDatesTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSE338Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Unit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Unit.NatScrappingUnitTest" />
-      <option name="MAIN_CLASS_NAME" value="Unit.NatScrappingUnitTest$GetDatesTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NatScrappingUnitTest$GetDatesTests.dateNotInList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSE338Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Unit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Unit.NatScrappingUnitTest" />
-      <option name="MAIN_CLASS_NAME" value="Unit.NatScrappingUnitTest$GetDatesTests" />
-      <option name="METHOD_NAME" value="dateNotInList" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NatScrappingUnitTest$GetRankingTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSE338Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Unit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Unit.NatScrappingUnitTest" />
-      <option name="MAIN_CLASS_NAME" value="Unit.NatScrappingUnitTest$GetRankingTests" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -231,6 +209,57 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UefIntegrationTests$BottomUp.TestingFilterYear" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSE338Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Integration.UefIntegrationTests" />
+      <option name="MAIN_CLASS_NAME" value="Integration.UefIntegrationTests$BottomUp" />
+      <option name="METHOD_NAME" value="TestingFilterYear" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UefIntegrationTests$BottomUp.TestingPopulate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSE338Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Integration.UefIntegrationTests" />
+      <option name="MAIN_CLASS_NAME" value="Integration.UefIntegrationTests$BottomUp" />
+      <option name="METHOD_NAME" value="TestingPopulate" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UefIntegrationTests$BottomUp.TestingScrape" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSE338Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Integration.UefIntegrationTests" />
+      <option name="MAIN_CLASS_NAME" value="Integration.UefIntegrationTests$BottomUp" />
+      <option name="METHOD_NAME" value="TestingScrape" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UefIntegrationTests$TopDown.TestingFilterYear" type="JUnit" factoryName="JUnit">
       <module name="CSE338Project" />
       <option name="PACKAGE_NAME" value="Integration.UefIntegrationTests" />
@@ -264,36 +293,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UefScrappingUnitTest$GetCountriesTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSE338Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Unit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Unit.UefScrappingUnitTest" />
-      <option name="MAIN_CLASS_NAME" value="Unit.UefScrappingUnitTest$GetCountriesTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UefScrappingUnitTest$GetUpTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSE338Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Unit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Unit.UefScrappingUnitTest" />
-      <option name="MAIN_CLASS_NAME" value="Unit.UefScrappingUnitTest$GetUpTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UefScrappingUnitTest" type="JUnit" factoryName="JUnit">
       <module name="CSE338Project" />
       <option name="PACKAGE_NAME" value="Unit" />
@@ -306,6 +305,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.PerformanceTests" />
       <item itemvalue="JUnit.RankTableUefGuiTesting" />
       <item itemvalue="JUnit.NatIntegrationTests$TopDown.TestingWPopulate" />
@@ -319,19 +319,18 @@
       <item itemvalue="JUnit.NatIntegrationTests$BottomUp" />
       <item itemvalue="JUnit.NatIntegrationTests$TopDown.TestingWScrape" />
       <item itemvalue="JUnit.NatIntegrationTests$TopDown.TestingFilterDate" />
-      <item itemvalue="JUnit.NatScrappingUnitTest$GetDatesTests" />
-      <item itemvalue="JUnit.NatScrappingUnitTest$GetDatesTests.dateNotInList" />
-      <item itemvalue="JUnit.NatScrappingUnitTest$GetRankingTests" />
-      <item itemvalue="JUnit.UefScrappingUnitTest$GetCountriesTests" />
-      <item itemvalue="JUnit.UefScrappingUnitTest$GetUpTests" />
+      <item itemvalue="JUnit.NatIntegrationTests$BottomUp.TestingFilterDate" />
+      <item itemvalue="JUnit.UefIntegrationTests$BottomUp.TestingScrape" />
+      <item itemvalue="JUnit.UefIntegrationTests$BottomUp.TestingPopulate" />
+      <item itemvalue="JUnit.UefIntegrationTests$BottomUp.TestingFilterYear" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UefScrappingUnitTest$GetCountriesTests" />
-        <item itemvalue="JUnit.UefScrappingUnitTest$GetUpTests" />
-        <item itemvalue="JUnit.NatScrappingUnitTest$GetRankingTests" />
-        <item itemvalue="JUnit.NatScrappingUnitTest$GetDatesTests" />
-        <item itemvalue="JUnit.NatScrappingUnitTest$GetDatesTests.dateNotInList" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.UefIntegrationTests$BottomUp.TestingFilterYear" />
+        <item itemvalue="JUnit.UefIntegrationTests$BottomUp.TestingPopulate" />
+        <item itemvalue="JUnit.UefIntegrationTests$BottomUp.TestingScrape" />
+        <item itemvalue="JUnit.NatIntegrationTests$BottomUp.TestingFilterDate" />
       </list>
     </recent_temporary>
   </component>
@@ -368,6 +367,12 @@
       <workItem from="1653593809603" duration="11208000" />
       <workItem from="1653664033781" duration="2145000" />
       <workItem from="1653756715071" duration="11489000" />
+      <workItem from="1653823117865" duration="5113000" />
+      <workItem from="1653938005162" duration="2082000" />
+      <workItem from="1653940125204" duration="3173000" />
+      <workItem from="1653985608979" duration="8302000" />
+      <workItem from="1654170979669" duration="1289000" />
+      <workItem from="1654535046525" duration="1647000" />
     </task>
     <task id="LOCAL-00001" summary="Maven dependencies updated">
       <created>1652899612596</created>
@@ -417,5 +422,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CSE338Project$NatIntegrationTests_TopDown_TestingFilterDate_1_.ic" NAME="NatIntegrationTests$TopDown.TestingFilterDate(1) Coverage Results" MODIFIED="1653940201989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Integration.*</FILTER>
+    </SUITE>
   </component>
 </project>

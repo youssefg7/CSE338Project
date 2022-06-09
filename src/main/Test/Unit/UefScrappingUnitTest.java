@@ -45,12 +45,11 @@ class UefScrappingUnitTest {
     }
 
     @Nested
-    @ExtendWith(ApplicationExtension.class)
     class GetCountriesTests{
         static ObservableList<String> countriesObservableList;
 
-        @Start
-        public static void start(Stage stage) throws FileNotFoundException {
+        @BeforeAll
+        public static void start() throws FileNotFoundException {
             countriesObservableList = UefScrapping.getCountries();
         }
 

@@ -51,8 +51,7 @@ public class NatScrapping {
         return ls;
     }
 
-    public static ObservableList<NatTeam> getRanking_(int i) throws IOException, JSONException, IllegalArgumentException {
-
+    public static ObservableList<NatTeam> getRanking_(int i) throws IllegalArgumentException {
         ObservableList<NatTeam> ls = observableArrayList();
         ls.add(new NatTeam(i));
         return ls;

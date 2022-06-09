@@ -63,7 +63,6 @@ class UefIntegrationTests {
          */
         @Test
         void TestingFilterYear(){
-
             rtc.yearFilter.setValue("2020");
             try{
                 rtc.filterYear();

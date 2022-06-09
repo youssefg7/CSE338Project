@@ -44,7 +44,6 @@ public class PerformanceTests {
 
     @Test
     void testingNatPopulatePerf(){
-
         long startTime = System.currentTimeMillis();
         rtc.populateTable(1);
         Awaitility.await().atMost(2, TimeUnit.MINUTES).until(() -> rtc.rankingTable.getItems().size()!=0);
@@ -52,12 +51,10 @@ public class PerformanceTests {
         long time = endTime - startTime;
         System.out.println(time);
         assertTrue(time < 30000);
-
     }
 
     @Test
     void testingUefPopulatePerf(){
-
         long startTime = System.currentTimeMillis();
         rtc.populateUefTable(2022);
         Awaitility.await().atMost(2, TimeUnit.MINUTES).until(() -> rtc.UefarankingTable.getItems().size()!=0);
@@ -65,7 +62,6 @@ public class PerformanceTests {
         long time = endTime - startTime;
         System.out.println(time);
         assertTrue(time < 60000);
-
     }
 
 
